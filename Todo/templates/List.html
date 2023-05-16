@@ -1,0 +1,30 @@
+{% extends 'Base.html' %}
+{% block content %}
+<div class="form_data">
+<form method='POST'action=".">
+{% csrf_token %}
+{{form.title}}
+<input type="submit"/>
+</form>
+
+
+<div class="container_2">
+    
+    {% for lists in object %}
+    <div>
+    <a href='delete/{{lists.id}}/'>Delete</a>
+    <a href='update/{{lists.id}}/'>Update</a>
+    {% if lists.completed == True %}
+    <h2><strike>{{lists.title}}</strike><h2>
+    {% else %}
+    <h2>{{lists.title}}</h2>
+    {% endif %}
+</div>
+    {% endfor %} 
+
+</div>
+
+</div>
+{% endblock  %}
+
+

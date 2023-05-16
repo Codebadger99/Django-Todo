@@ -1,0 +1,11 @@
+{% extends 'Base.html' %}
+{% block content %}
+<div class="form_data">
+<form action="" method="POST">
+    {% csrf_token %}
+    <h1>Update Task</h1>
+    {{form}}
+    <input type="submit" name="submit"/>
+</form>
+</div>
+{% endblock  %}

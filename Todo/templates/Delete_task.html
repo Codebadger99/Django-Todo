@@ -1,0 +1,12 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+<div class="form_data">
+<form method='POST'action="">
+{% csrf_token %}
+<p>are you sure you want to delete '{{object.title}}'</p>
+<input type="submit" value="YES"/>
+<a href="/"><input type="submit" value="NO"/></a>
+</form>
+</div>
+{% endblock  %}
